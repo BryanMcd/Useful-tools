@@ -1,0 +1,12 @@
+for i in *R1.fastq.gz;
+do STAR --runThreadN 16\
+--genomeDir /home/brmcdonald/scratch/genome/mm10/star\
+--readFilesIn /home/brmcdonald/scratch/Goldrath/fastqs/$i /home/brmcdonald/scratch/Goldrath/fastqs/${i%R1.fastq.gz}R2.fastq.gz\
+--readFilesCommand zcat\
+--genomeLoad LoadAndKeep\
+--outFilterType BySJout\
+--outFilterMultimapNmax 10\
+--alignIntronMax 1000000\
+--alignMatesGapMax 100000\
+--outFileNamePrefix /home/brmcdonald/scratch/Goldrath/aligned/${i%R1.fastq.gz};
+done
