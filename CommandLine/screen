@@ -1,0 +1,16 @@
+# Opening a screen lets you run processes on tscc without having to worry about being disconnected or having a broken pipe.
+
+# Install (from home directory)
+wget https://raw.githubusercontent.com/olgabot/rcfiles/master/.screenrc
+
+# Start a screen session
+screen
+
+# See what screens are available
+screen -ls
+
+# Re-attach a screen
+screen ... (forgot how to do this)
+
+# Close a screen that is attached
+[control+c+d]
