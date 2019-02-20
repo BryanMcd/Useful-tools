@@ -1,0 +1,8 @@
+## samtools view -- converts .sam to .bam
+# -S indicates that input is .sam
+# -b indicates that output is .bam
+for i in /path/sam/*.sam;
+do samtools view -S -b $i > ${i%sam}bam;
+done
+
+## samtools sort
